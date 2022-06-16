@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Simple calculator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script>
+        angular.module('CalculatorApp', [])
+            .controller('CalculatorController', function ($scope) {
+                $scope.result = function () {
+                    if ($scope.operator == '+') {
+                        return $scope.a + $scope.b;
+                    }
+                    if ($scope.operator == '-') {
+                        return $scope.a - $scope.b;
+                    }
+                    if ($scope.operator == '*') {
+                        return $scope.a * $scope.b;
+                    }
+                    if ($scope.operator == '/') {
+                        return $scope.a / $scope.b;
+                    }
+                };
+            });
+    </script>
+</head>
+
+<body>
+    <h1>SIMPLE CALCULATOR</h1>
+    <div ng-app="CalculatorApp" ng-controller="CalculatorController">
+        <p>Enter a number: <input type="number" ng-model="a"></p>
+        <p>Enter a number:<input type="number" ng-model="b"></p>
+        <p>Select an operation: <select ng-model="operator">
+                <option>+</option>
+                <option>*</option>
+                <option>-</option>
+                <option>/</option>
+            </select></p>
+        <p><strong>Result: </strong>{{ result() }}</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+    <script>
+        var app = angular.module('myapp', []);
+        app.controller('controller', function ($scope) {
+            $scope.user = '';
+            $scope.password = '';
+            $scope.u = /^[a-z_]*$/;
+            $scope.p = /^(?=.*[a-z])(?=.[A-Z])(?=.[0-9])(?=.\W).*$/;
+        });
+
+    </script>
+</head>
+
+<body>
+    <form name="myform" ng-app="myapp" ng-controller="controller" novalidate>
+
+        <h1>Validation</h1>
+
+        <input type="text" placeholder="username" id="user" name="user" ng-model="user" ng-pattern="u" required>
+        <span style="color: red;" ng-show="myform.user.$dirty && myform.user.$invalid">
+            <span ng-show="myform.user.$error.required">username required</span>
+            <span ng-show="myform.user.$error.pattern">invalid username</span>
+        </span>
+
+        <br><br>
+
+        <input type="text" placeholder="password" id="password" name="password" ng-model="password" ng-pattern="p"
+            required>
+        <span style="color: red;" ng-show="myform.password.$dirty && myform.password.$invalid">
+            <span ng-show="myform.password.$error.required">password required</span>
+            <span ng-show="myform.password.$error.pattern">invalid password</span>
+        </span>
+
+        <br><br>
+        <button
+            ng-disabled="myform.user.$dirty && myform.user.$invalid ||  myform.password.$dirty && myform.password.$invalid"
+            ngclick="submit()">submit</button>
+
+    </form>
+</body>
+
+</html>
