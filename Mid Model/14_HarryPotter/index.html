@@ -1,0 +1,48 @@
+<html>
+<style>
+    body {
+        transition: 2s;
+    }
+
+    #block {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        transition: 2s;
+    }
+</style>
+
+<body>
+    <div>
+        <input type="checkbox" id="move" onclick="move()">Wingardium Leviosa
+        <input type="checkbox" id="light" onclick="light()">Lumos
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="block">
+    </div>
+</body>
+<script>
+    function move() {
+        var move = document.getElementById('move');
+        var block = document.getElementById('block');
+        block.style.position = 'relative';
+        if (move.checked == true) {
+            block.style.bottom = '20px';
+        } else {
+            block.style.bottom = '0px';
+        }
+    }
+
+    function light() {
+        var light = document.getElementById('light');
+        if (light.checked == true) {
+            document.body.style.background = "yellow";
+        } else {
+            document.body.style.background = "white";
+        }
+    }
+</script>
+
+</html>

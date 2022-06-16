@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Average employee salary</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myctrl">
+    <input type="number" ng-model="num1">
+    <input type="number" ng-model="num2">
+    <input type="number" ng-model="num3">
+    <button type="button" ng-click="fun()">Submit</button>
+    <p>{{str}}</p>
+</body>
+<script>
+    app = angular.module("myApp", []);
+    app.service('myserv', function () {
+        this.myfun = function (x, y, z) {
+            if ((x + y + z) / 3 > 60)
+                return 1;
+            else
+                return 0;
+
+        }
+    })
+    app.controller("myctrl", function ($scope, myserv) {
+        $scope.val = 0;
+        $scope.str = "";
+        $scope.fun = function () {
+            $scope.val = myserv.myfun($scope.num1, $scope.num2, $scope.num3);
+            if ($scope.val == 1)
+                $scope.str = "not fired";
+            else
+                $scope.str = "fired";
+        }
+    })
+</script>
+
+</html>

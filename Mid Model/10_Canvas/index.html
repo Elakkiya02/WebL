@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="">
+
+    Keep HTML: <input type="button" ng-click="cHide" ng-model="myVar" ng-init="myVar = true">
+
+    <div ng-if="myVar">
+        <h1>Welcome</h1>
+        <p>Welcome to my home.</p>
+        <hr>
+    </div>
+
+</body>
+
+</html>

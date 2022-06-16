@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="mainController">
+        <select ng-model='inputMode'>
+            <option value="0">Dark</option>
+            <option value="1">Light</option>
+        </select>
+        <theme mode="{{inputMode}}">
+            <h1>Hello World</h1>
+        </theme>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+.error-message {
+    display: none;
+}
+input:invalid {
+    border: 2px solid red;
+  }
+  input:invalid ~ .error-message {
+    display: block; 
+    color: red;
+  }

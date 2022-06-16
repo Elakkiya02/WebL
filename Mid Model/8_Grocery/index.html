@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <form ng-submit="add()">
+
+
+            <input type="text" ng-model="new_item.name">
+            <input type="text" ng-model="new_item.cost">
+            <input type="submit" name="add" value="ENTER NEW ITEMS TO BE ADDED" ADD>
+
+            <h3>ITEM LIST</h3>
+            <table border="1px solid">
+                <tr>
+                    <th>Item name</th>
+                    <th>Item Cost</th>
+                </tr>
+                <tr ng-repeat="i in checklist">
+                    <td>{{i.name}}</td>
+                    <td>{{i.cost}}</td>
+                </tr>
+            </table>
+            <p>Revenue:{{rev()}}</p>
+        </form>
+        <br><br><br><br>
+        <table>
+            <thead>
+                <tr>
+                    <th>ITEMS TO BE BOUGHT</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in checklist">
+                    <td>
+                        <label for="food1" ng-hide="check"> {{i.name}}</label> <input type="checkbox" ng-model="check"
+                            ng-hide="check">
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.checklist = [{
+                name: "RICE",
+                cost: 100
+            }, {
+                name: 'WHEAT',
+                cost: 50
+            }
+            ];
+
+            $scope.add = function () {
+                $scope.checklist.push({
+                    name: $scope.new_item.name,
+                    cost: $scope.new_item.cost
+                })
+
+            };
+            $scope.rev = function () {
+                var total = 0;
+                for (count = 0; count < $scope.checklist.length; count++) {
+                    total += $scope.checklist[count].cost * (5 / 100);
+                }
+                return total;
+            };
+        });
+
+    </script>
+</body>
+
+</html>

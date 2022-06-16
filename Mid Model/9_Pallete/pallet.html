@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        var app = angular.module('my', [])
+        app.controller('cont', function ($scope) {
+            $scope.count = 0;
+            $scope.add_c = function () {
+                $scope.count = $scope.count + 1;
+                console.log($scope.count);
+            };
+        })
+    </script>
+</head>
+
+<body ng-app="my" ng-controller="cont">
+
+    <body>
+
+        <table>
+            <!-- track by is used in order to link your data with the DOM generation (and mainly re-generation)
+                 made by ng-repeat. basically tell angular to generate a single DOM element per data object in the given collection -->
+            <tr ng-repeat="x in [].constructor(count) track by $index">
+                <td>
+                    <input type="color" ng-model="a">
+                </td>
+                <td bgcolor="{{a}}">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </td>
+            </tr>
+        </table>
+        <button ng-click="add_c()">add</button>
+    </body>
+
+</html>

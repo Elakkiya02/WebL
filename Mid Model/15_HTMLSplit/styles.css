@@ -1,0 +1,20 @@
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+  }
+  .left {
+    left: 0;
+    background-color: red;
+  }
+  .right {
+    right: 0;
+    background-color:#111;
+  }    
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }

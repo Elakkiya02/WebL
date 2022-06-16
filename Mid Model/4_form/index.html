@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form action="">
+        <label for="username">Username: </label>
+        <input type="text" id="username" name="username" pattern="[a-z_]+">
+        <p class="error-message">Username Should contain only small alphabets and underscore</p>
+        <br>
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$&*]).{4,}">
+        <p class="error-message">
+            Password must contain at least one number and both lower and uppercase letters and special characters
+        </p>
+        <br>
+        <input type="submit">
+    </form>
+
+</body>
+
+</html>

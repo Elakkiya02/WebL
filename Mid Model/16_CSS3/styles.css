@@ -1,0 +1,41 @@
+h1{
+    border: 4px ridge aquamarine;
+    text-align: justify;
+    text-justify: inter-word;
+    transform: rotate(1deg); 
+    padding: 20px;
+    margin: 30px;
+}
+
+h2{
+    border: 4px groove  aquamarine;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform: skewY(2deg);
+    padding: 20px;
+    margin: 30px;
+}
+h3{
+    width: 40px;
+    border: 3px solid  aquamarine;
+    word-break: break-all;
+    transform: scaleY(1.5);
+    padding: 20px;
+    margin: 30px;
+}
+h4{
+    width: 40px;
+    border: 2px dashed aquamarine;
+    word-wrap: break-word;
+    transform: rotateX(180deg);
+    padding: 20px;
+    margin: 30px;
+}
+h5{
+    border: 1px  dotted aquamarine;
+    writing-mode: vertical-rl;
+    transform: rotateY(180deg);
+    padding: 20px;
+    margin: 30px;
+}

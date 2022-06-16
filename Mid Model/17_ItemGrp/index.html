@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Item and prices</title>
+    <style>
+        .item {
+            display: block;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Item List: </h3>
+    <a class="item" onclick="myFunc()" href="#grp1">Item No.1</a>
+    <a class="item" onclick="myFunc()" href="#grp1">Item No.2</a>
+    <a class="item" onclick="myFunc()" href="#grp1">Item No.3</a>
+    <a class="item" onclick="myFunc()" href="#grp1">Item No.4</a>
+    <a class="item" onclick="myFunc()" href="#grp1">Item No.5</a>
+    <a class="item" onclick="myFunc()" href="#grp2">Item No.6</a>
+    <a class="item" onclick="myFunc()" href="#grp2">Item No.7</a>
+    <a class="item" onclick="myFunc()" href="#grp2">Item No.8</a>
+    <a class="item" onclick="myFunc()" href="#grp2">Item No.9</a>
+    <a class="item" onclick="myFunc()" href="#grp2">Item No.10</a>
+    <a class="item" onclick="myFunc()" href="#grp3">Item No.11</a>
+    <a class="item" onclick="myFunc()" href="#grp3">Item No.12</a>
+    <a class="item" onclick="myFunc()" href="#grp3">Item No.13</a>
+    <a class="item" onclick="myFunc()" href="#grp3">Item No.14</a>
+    <a class="item" onclick="myFunc()" href="#grp3">Item No.15</a>
+    <a class="item" onclick="myFunc()" href="#grp4">Item No.16</a>
+    <a class="item" onclick="myFunc()" href="#grp4">Item No.17</a>
+    <a class="item" onclick="myFunc()" href="#grp4">Item No.18</a>
+    <a class="item" onclick="myFunc()" href="#grp4">Item No.19</a>
+    <a class="item" onclick="myFunc()" href="#grp4">Item No.20</a>
+
+    <table border="1px solid">
+        <tr>
+            <th>Group</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Group 1</td>
+            <td id="grp1">Rs.100</td>
+        </tr>
+        <tr>
+            <td>Group 2</td>
+            <td id="grp2">Rs.50</td>
+        </tr>
+        <tr>
+            <td>Group 3</td>
+            <td id="grp3">Rs.60</td>
+        </tr>
+        <tr>
+            <td>Group 4</td>
+            <td id="grp4">Rs.85</td>
+        </tr>
+    </table>
+    <div id="output"></div>
+    <button onclick="display()">Click</button>
+
+    <script>
+        var method = "";
+        function myFunc() {
+            var link = document.querySelector('a');
+            method = link.getAttribute('href');
+        }
+        function display() {
+            var id = method.substring(1,);
+            console.log(id);
+            var pr = document.getElementById(id).value;
+            console.log(pr);
+        }
+    </script>
+</body>
+
+</html>

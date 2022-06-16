@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Avengers</title>
+</head>
+
+<body>
+    <form action="">
+        <p>Enter Avenger's Name: <input id="name" name="name" type="text"></p>
+        <button onclick="showOp()">Check</button>
+        <div id="check"></div>
+        <br>
+        <button type="submit">Finished</button>
+    </form>
+
+
+    <script>
+        function showOp() {
+            var inp = document.getElementById("name").value;
+            if (inp.length == 0) {
+                document.getElementById("check").innerHTML = "Name not found";
+                return;
+            }
+            else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        document.getElementById("check").innerHTML = this.responseText;
+                    }
+                }
+                xmlhttp.open("POST", "jarvis.php?q=");
+                xmlhttp.send(inp);
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

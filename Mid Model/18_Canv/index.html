@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <input type="number" name="x" id="xcord">
+        <input type="number" name="y" id="ycord">
+        <input type="number" name="radius" id="rad">
+        <input type="submit" value="circle" onclick="circ()">
+    </form>
+    <hr>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+    <hr>
+    <hr>
+    <form>
+        <input type="number" name="xr" id="xd">
+        <input type="number" name="yr" id="yd">
+        <input type="number" name="hgt" id="ht">
+        <input type="number" name="wdt" id="wt">
+        <input type="submit" value="rect" onclick="rect()">
+    </form>
+    <hr>
+    <canvas id="myCanvas1" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        function circ() {
+
+            var c = document.getElementById("myCanvas");
+            var x = document.getElementById("xcord").value;
+            var y = document.getElementById("ycord").value;
+            var r = document.getElementById("rad").value;
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, 2 * Math.PI, false);
+            ctx.stroke();
+        }
+        function rect() {
+            var c = document.getElementById("myCanvas1");
+            var x = document.getElementById("xd").value;
+            var y = document.getElementById("yd").value;
+            var height = document.getElementById("ht").value;
+            var width = document.getElementById("wt").value;
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+
+            ctx.strokeRect(x, y, width, height);
+            ctx.stroke();
+            ctx.fill();
+
+        }
+    </script>
+
+</body>

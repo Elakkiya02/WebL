@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="myctrl">
+        <form ng-submit="add()">
+            <input type="text" name="song name " ng-model="newplaylist.name" placeholder="ENTER THE SONG U LIKE">
+            <input type="text" name="artist " ng-model="newplaylist.artist" placeholder="ENTER artist">
+            <input type="text" name="album " ng-model="newplaylist.album" placeholder="ENTER album">
+            <input type="submit" name="submit" value="submit">
+
+        </form>
+
+        <BR>
+        <BR>
+        <BR>
+
+        <!-- <button ng-click="order= 'artist'">order by artist</button>
+        <button ng-click="order= 'album'">order by album</button> -->
+        <input type="text" placeholder="enter artist name " ng-model="search">
+
+
+        <div ng-repeat="x in playlist  | filter: search">
+            {{x.name}} {{x.artist}} {{x.album}}
+        </div>
+
+    </div>
+
+    </div>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.playlist = [{
+                name: "smack ",
+                artist: "xxx",
+                album: "yyy"
+
+
+            }];
+
+            $scope.add = function () {
+                $scope.playlist.push({
+                    name: $scope.newplaylist.name,
+                    artist: $scope.newplaylist.artist,
+                    album: $scope.newplaylist.album
+                })
+
+            };
+
+
+        });
+    </script>
+</body>
+
+</html>
