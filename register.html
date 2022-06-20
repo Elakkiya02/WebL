@@ -1,0 +1,16 @@
+<head>
+
+    <title>Register</title>
+</head>
+
+
+<div class="register_div">
+    <form name="register_form" ng-controller="userRegisterCtrl" ng-submit="submitData()" ng-init="populate()">
+        <p>Enter Book ID: <input type="text" id="f_name" name="f_name" class="f_name" ng-required="true"></p>
+        <p>Enter Book Name: <input type="text" id="l_name" name="l_name" class="l_name" ng-required="true"></p>
+        <p>Enter Book Author: <input type="text" id="email" name="email" class="email" ng-required="true"></p>
+        <p>Enter Book Cost: <input type="text" id="pwd" name="pwd" class="pwd" ng-required="true"></p>
+        <input type="submit" name="add" id="add" value="Add">
+        <a href="#!/users">View Existing Books</a>
+    </form>
+</div>
